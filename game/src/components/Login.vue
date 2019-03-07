@@ -16,7 +16,7 @@
         <div class="md-layout">
           <md-button class="md-raised md-primary" type="submit" v-on:click="login">Login</md-button>
           <md-button class="md-raised md-accent" v-on:click="clear">Clear</md-button>
-          <md-button class="md-dense md-primary">Forgot Password?</md-button>
+          <router-link to="/forgot"><md-button class="md-dense md-primary">Forgot Password?</md-button></router-link>
         </div>
       </div>
     </div>
@@ -39,12 +39,12 @@ export default {
   data: () => ({
     email: "",
     password: "",
-    rememberme: false
+    rememberme: false,
   }),
 
   methods: {
     login: function() {
-      
+      this.$router.push({ path: '/dashboard'});
     },
     clear : function() {
       this.email = "";
@@ -57,6 +57,6 @@ export default {
 
 <style scoped>
 .login{
-  margin: 200px 0;
+  margin: 150px 0;
 }
 </style>
